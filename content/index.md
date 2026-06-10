@@ -18,8 +18,7 @@ Procesados para estudio universitario en la Universidad Nacional del Altiplano (
 - [[clases/MIEMBRO INFERIOR/06_TOPOGRAFIA/index|Topografía]] — regiones y planos topográficos
 
 ### Abdomen
-- [[clases/ABDOMEN/index|Abdomen (resumen)]] — angiología, inervación, órganos, paredes, topografía
-- [[clases/ABDOMEN_v2/index|Abdomen v2]] — versión enriquecida con imágenes
+- [[clases/ABDOMEN_v2/index|Abdomen]] — paredes, peritoneo, órganos, angiología, inervación, topografía
 
 ## Sobre este sitio
 
