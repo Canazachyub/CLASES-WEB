@@ -34,10 +34,23 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
+      - name: Cache Quartz plugins
+        uses: actions/cache@v4
+        with:
+          path: .quartz/plugins
+          key: ${{ runner.os }}-quartz-${{ hashFiles('quartz.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-quartz-
+
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Build site
+      - name: Create .quartz/plugins stub (needed by Head.tsx at compile time)
+        run: |
+          mkdir -p .quartz/plugins
+          echo 'export const CustomOgImagesEmitterName = "og-image"' > .quartz/plugins/index.ts
+
+      - name: Build site (config-loader installs real plugins dynamically)
         run: npx quartz build -d public -v
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
