@@ -54,7 +54,7 @@ jobs:
         run: npx quartz plugin install
 
       - name: Build site
-        run: npx quartz build -d public -v
+        run: npx quartz build -v
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
