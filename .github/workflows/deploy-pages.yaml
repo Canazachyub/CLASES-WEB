@@ -31,15 +31,28 @@ jobs:
         with:
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
-      - name: Install dependencies
+      - name: Cache Quartz plugins
+        uses: actions/cache@v4
+        with:
+          path: .quartz/plugins
+          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('quartz.lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-quartz-plugins-
+
+      - name: Install npm dependencies
         run: npm ci
 
-      - name: Install Quartz plugins
-        run: npx quartz plugin install
+      - name: Install Quartz community plugins
+        run: npm run install-plugins
 
       - name: Build site
         run: npx quartz build -d public
+
+      - name: List build output (debug)
+        run: ls -la public/ || echo "public/ not found"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
