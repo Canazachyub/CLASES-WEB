@@ -34,25 +34,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Cache Quartz plugins
-        uses: actions/cache@v4
-        with:
-          path: .quartz/plugins
-          key: ${{ runner.os }}-quartz-plugins-${{ hashFiles('quartz.lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-quartz-plugins-
-
       - name: Install npm dependencies
         run: npm ci
 
-      - name: Install Quartz community plugins
-        run: npm run install-plugins
-
       - name: Build site
-        run: npx quartz build -d public
+        run: npx quartz build -d public -v
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: List build output (debug)
-        run: ls -la public/ || echo "public/ not found"
+      - name: Debug - listar output
+        run: |
+          echo "=== Raiz de public/ ===" && ls -la public/ || echo "public/ NO encontrado"
+          echo "=== .html en raiz ===" && ls public/*.html 2>/dev/null || echo "sin .html en raiz"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
