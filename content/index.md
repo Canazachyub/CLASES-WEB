@@ -9,7 +9,16 @@ Procesados para estudio universitario en la Universidad Nacional del Altiplano (
 
 ## Contenido disponible
 
-- [[clases/ABDOMEN/index|Abdomen]] — angiología, inervación, órganos, paredes, topografía
+### Miembro Inferior
+- [[clases/MIEMBRO INFERIOR/01_OSTEOLOGIA/index|Osteología]] — coxal, fémur, rótula, tibia, peroné, tarso, metatarso
+- [[clases/MIEMBRO INFERIOR/02_ARTROLOGIA/index|Artrología]] — sacroilíaca, cadera, rodilla, tobillo, pie
+- [[clases/MIEMBRO INFERIOR/03_MIOLOGIA/index|Miología]] — glúteos, muslo, pierna, pie
+- [[clases/MIEMBRO INFERIOR/04_ANGIOLOGIA/index|Angiología]] — arterias y venas del miembro inferior
+- [[clases/MIEMBRO INFERIOR/05_INERVACION/index|Inervación]] — plexo lumbosacro, nervios principales
+- [[clases/MIEMBRO INFERIOR/06_TOPOGRAFIA/index|Topografía]] — regiones y planos topográficos
+
+### Abdomen
+- [[clases/ABDOMEN/index|Abdomen (resumen)]] — angiología, inervación, órganos, paredes, topografía
 - [[clases/ABDOMEN_v2/index|Abdomen v2]] — versión enriquecida con imágenes
 
 ## Sobre este sitio
