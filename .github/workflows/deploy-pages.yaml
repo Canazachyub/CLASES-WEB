@@ -50,7 +50,10 @@ jobs:
           mkdir -p .quartz/plugins
           echo 'export const CustomOgImagesEmitterName = "og-image"' > .quartz/plugins/index.ts
 
-      - name: Build site (config-loader installs real plugins dynamically)
+      - name: Install Quartz plugins
+        run: npx quartz plugin install
+
+      - name: Build site
         run: npx quartz build -d public -v
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
